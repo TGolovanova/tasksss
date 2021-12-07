@@ -11,11 +11,13 @@ public class trainTask {
 
     public static String deleteInt(int[] arrOfInts, int someInt) {
 
+        int ind = 0;
+
         for (int i = 0; i < arrOfInts.length; i++) {
-            if (arrOfInts[i] == someInt) {
-                arrOfInts[i] = 0;
+            if (arrOfInts[i] != someInt) {
+                arrOfInts[ind++] = arrOfInts[i];
             }
         }
-        return Arrays.toString(arrOfInts);
+        return Arrays.toString(Arrays.copyOf(arrOfInts, ind));
     }
 }
